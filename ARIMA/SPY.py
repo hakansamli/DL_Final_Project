@@ -12,13 +12,13 @@ df = pd.read_csv("SPY-2.csv") #load the SPY stock history data:
 
 plt.figure()
 lag_plot(df['Open'], lag=3)
-plt.title('SPY Stock (Auto correlation plot with lag = 3)')
+plt.title('SPY Stock (Auto-Correlation Plot with Lag = 3)')
 plt.show()
 
 #Plot the SPY Stock Price in Last 5 Years
 
 plt.plot(df["Date"], df["Close"])
-plt.xticks(np.arange(0,1300, 150), df['Date'][0:1300:150])
+plt.xticks(np.arange(0,1260, 150), df['Date'][0:1260:150])
 plt.title("SPY Stock Price over 5 Years")
 plt.xlabel("DATE")
 plt.ylabel("PRICE")
@@ -52,10 +52,10 @@ print('Mean Squared Error is {}'.format(MSE_error))
 test_indexes = df[train_data_len:].index
 plt.plot(test_indexes, model_outputs, color='blue', marker='o', linestyle='dashed',label='Predicted Price')
 plt.plot(test_indexes, X_test, color='red', label='Actual Price')
-plt.title('SPY Prices Prediction over 5 Years')
+plt.title('SPY Prices Prediction')
 plt.xlabel('Date')
 plt.ylabel('Prices')
-plt.xticks(np.arange(881, 380, 50), df.Date[881:380:50])
+plt.xticks(np.arange(900, 1260, 50), df.Date[900:1260:50])
 plt.legend()
 plt.show()
 
