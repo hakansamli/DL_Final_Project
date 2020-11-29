@@ -12,7 +12,7 @@ df = pd.read_csv("SPY-2.csv") #load the SPY stock history data:
 
 plt.figure()
 lag_plot(df['Open'], lag=3)
-plt.title('SPY Stock - Auto correlation plot with lag = 3')
+plt.title('SPY Stock (Auto correlation plot with lag = 3)')
 plt.show()
 
 #Plot the SPY Stock Price in Last 5 Years
