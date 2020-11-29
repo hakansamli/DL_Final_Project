@@ -18,7 +18,7 @@ plt.show()
 #Plot the SPY Stock Price in Last 5 Years
 
 plt.plot(df["Date"], df["Close"])
-plt.xticks(np.arange(0,1260, 150), df['Date'][0:1260:150])
+plt.xticks(np.arange(0,1260, 125), df['Date'][0:1260:125])
 plt.title("SPY Stock Price over 5 Years")
 plt.xlabel("DATE")
 plt.ylabel("PRICE")
