@@ -34,7 +34,7 @@ X_test = df[train_data_len:]['Close'].values
 
 #ARIMA Parameters: p=4, d=1 and q=0.
 
-history = list(X_test)
+history = X_train.tolist()
 model_outputs = []
 for index in range(len(X_test)):
     model = ARIMA(history, order=(4, 1, 0))
@@ -49,9 +49,9 @@ print('Mean Squared Error is {}'.format(MSE_error))
 
 #Plot the Predictions of the Model 
 
-test_index = df[train_data_len:].index
-plt.plot(test_index, model_outputs, color='blue', marker='o', linestyle='dashed',label='Predicted Price')
-plt.plot(test_index, X_test, color='red', label='Actual Price')
+test_indexes = df[train_data_len:].index
+plt.plot(test_indexes, model_outputs, color='blue', marker='o', linestyle='dashed',label='Predicted Price')
+plt.plot(test_indexes, X_test, color='red', label='Actual Price')
 plt.title('SPY Prices Prediction over 5 Years')
 plt.xlabel('Date')
 plt.ylabel('Prices')
